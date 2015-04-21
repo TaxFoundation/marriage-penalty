@@ -1,7 +1,8 @@
 var cellWidth = 2,
-    cellHeight = 1,
+    cellHeight = 2,
+    baseDimension = 400,
     svg = d3.select('body').append('svg')
-      .attr('width', cellWidth * 400).attr('height', cellHeight * 400), // Assumes 400x400 data points
+      .attr('width', cellWidth * baseDimension).attr('height', cellHeight * baseDimension), // Assumes equal number of rows and columns
     colorize = d3.scale.linear()
       .domain([
         -0.12,
@@ -26,12 +27,12 @@ var cellWidth = 2,
         '#e57373',
         '#ef9a9a',
         '#eeeeee',
-        '#a5d6a7',
-        '#81c784',
-        '#4caf50',
-        '#1b5e20',
-        '#1e452c',
-        '#17312c'
+        '#90caf9',
+        '#64b5f6',
+        '#2196f3',
+        '#0d47a1',
+        '#0d276f',
+        '#000b33'
       ].reverse());
 
 d3.text("data/kids-0.csv", function(text){ // Available data sets: kids-0.csv, kids-1.csv, kids-2.csv
